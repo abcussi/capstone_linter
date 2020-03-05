@@ -22,6 +22,20 @@ module Cops
     end
     check_lines_bet_blocks(cont, '}')
   end
+  def check_indent_level(cont, key_o, key_c)
+    line = 0
+    lines = []
+    cont.each_with_index do |x, a|
+      x.reset
+      lines << line
+      line += 1 if x.exist?(Regexp.new(key_o))
+      next unless x.exist?(Regexp.new(key_c))
+
+      line -= 1
+      lines[a] = line
+    end
+    lines
+  end
   def spacing_cop(cont)
     cont.each_with_index do |x, a|
       spc_check_before(a + 1, x, '{')
