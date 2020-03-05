@@ -94,7 +94,23 @@ module Cops
       end
     end
   end
-  def log_error
-    p "error"
+  def log_error(cases, lvl, car = nil, position = nil, lic = nil)
+    line_with_test = "Error: lvl #{lvl}"
+    line_with_test += ", col: #{position}" unless position.nil?
+    case cases
+    when 1
+      puts "#{line_with_test} Indentation problem expected #{lic} white spaces"
+    when 2
+      puts "#{line_with_test} Spacing problem expected one space after #{car}"
+    when 3
+      puts "#{line_with_test} Spacing problem expected one space before #{car}"
+    when 4
+      puts "#{line_with_test} Format problem Expected line break after #{car}"
+    when 5
+      puts "#{line_with_test} Format problem Expected only one line after #{car}"
+    else
+      puts "#{line_with_test} problem"
+    end
+    cases
   end
 end
