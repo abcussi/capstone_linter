@@ -1,6 +1,6 @@
 require 'strscan'
 
-module Cops
+module Test
   def indent_cop(cont, key_o, key_c)
     lev = check_indent_level(cont, key_o, key_c)
     cont.each_with_index do |x, a|
@@ -95,8 +95,8 @@ module Cops
     end
   end
   def log_error(cases, lvl, car = nil, position = nil, lic = nil)
-    line_with_test = "Error: lvl #{lvl}"
-    line_with_test += ", col: #{position}" unless position.nil?
+    line_with_test = "problem: line #{lvl}"
+    line_with_test += ", column: #{position}" unless position.nil?
     case cases
     when 1
       puts "#{line_with_test} Indentation problem expected #{lic} white spaces"
