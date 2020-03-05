@@ -14,4 +14,13 @@ module Cops
       log_error(1, a + 1, nil, nil, lev[a] * 2) unless sp == lev[a] * 2
     end
   end
+  def spacing_cop(cont)
+    cont.each_with_index do |x, a|
+      spc_check_before(a + 1, x, '{')
+      spc_check_after(a + 1, x, '\)')
+      spc_check_before(a + 1, x, '\(')
+      spc_check_after(a + 1, x, ':')
+      spc_check_after(a + 1, x, ',')
+    end
+  end
 end
