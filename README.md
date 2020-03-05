@@ -1,16 +1,12 @@
-# bubble-sort-ruby
+# CAPSTONE PROJECT MY OWN LINTER
 
-First Ruby Microverse Project By Ángel Cussi &amp; Oscar Russi
+This is a linter for begginers that use ruby to check a file *.css that could have problems with the indentation or the spaces and the break lines.
 
 ![screenshot](./screenshot.png)
 
-# Bubble sort on Ruby 
-
-First Microverse project for Ruby Curriculum
-
 # What it does
 
-Two methods for organizing an array using bubble sort algorithm. The first method doesnt use blocks, the second method use blocks.
+takes a file *.css like a linter to check the common mistakes with the indentation or the line_form and it can discribe the spacing betewen the lines.
 
 ## Built With
 
@@ -20,18 +16,14 @@ Two methods for organizing an array using bubble sort algorithm. The first metho
 
 ## Live Demo
 
-[Live Demo](https://repl.it/@yoxter3423/bubble-sort-ruby-1)
+[Live Demo](https://repl.it/github/abcussi/capstone_linter)(not able until merge)
 
-## Authors
+## Author
 
 **Ángel Cussi**
 - Github: [@profile](https://github.com/abcussi)
 - Twitter: [@profile](https://twitter.com/thecussi)
 - Linkedin: [profile](https://www.linkedin.com/in/angel-cussi-1b2310174/)
-
-**Oscar Russi**
-- Github: [@andresporras3423](https://github.com/andresporras3423/)
-- Linkedin: [Oscar Russi](https://www.linkedin.com/in/oscar-andr%C3%A9s-russi-porras-053236167/)
 
 ## 🤝 Contributing
 
