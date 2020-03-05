@@ -45,4 +45,15 @@ module Cops
       spc_check_after(a + 1, x, ',')
     end
   end
+  def spc_check_before(lvl, cad, car)
+    cad.reset
+    res= cad.scan_until(Regexp.new(car))
+    while cad.matched?
+      res= StringScanner.new(res.reverse)
+      res.skip(Regexp.new(car))
+      res.scan(/\s+/)
+      log_error(3, lvl, car, res.string.length - res.pos) if res.matched != ' '
+      res= cad.scan_until(Regexp.new(car))
+    end
+  end
 end
