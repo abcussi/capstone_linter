@@ -65,6 +65,15 @@ module Cops
       cad.scan_until(Regexp.new(car))
     end
   end
+  def check_ret_after(lvl, cad, car)
+    cad.reset
+    cad.scan_until(Regexp.new(car))
+    while cad.matched?
+      log_error(4, lvl, car, cad.pos) unless cad.eos?
+      cad.scan_until(Regexp.new(car))
+    end
+  end
+  
   def log_error
     p "error"
   end
