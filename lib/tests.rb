@@ -14,6 +14,7 @@ module Test
       log_error(1, a + 1, nil, nil, lev[a] * 2) unless sp == lev[a] * 2
     end
   end
+
   def line_format_cop(cont)
     cont.each_with_index do |x, a|
       check_ret_after(a + 1, x, '{')
@@ -22,6 +23,7 @@ module Test
     end
     check_lines_bet_blocks(cont, '}')
   end
+
   def check_indent_level(cont, key_o, key_c)
     line = 0
     lines = []
@@ -36,6 +38,7 @@ module Test
     end
     lines
   end
+
   def spacing_cop(cont)
     cont.each_with_index do |x, a|
       spc_check_before(a + 1, x, '{')
@@ -45,17 +48,19 @@ module Test
       spc_check_after(a + 1, x, ',')
     end
   end
+
   def spc_check_before(lvl, cad, car)
     cad.reset
-    res= cad.scan_until(Regexp.new(car))
+    res = cad.scan_until(Regexp.new(car))
     while cad.matched?
-      res= StringScanner.new(res.reverse)
+      res = StringScanner.new(res.reverse)
       res.skip(Regexp.new(car))
       res.scan(/\s+/)
       log_error(3, lvl, car, res.string.length - res.pos) if res.matched != ' '
-      res= cad.scan_until(Regexp.new(car))
+      res = cad.scan_until(Regexp.new(car))
     end
   end
+
   def spc_check_after(lvl, cad, car)
     cad.reset
     cad.scan_until(Regexp.new(car))
@@ -65,6 +70,7 @@ module Test
       cad.scan_until(Regexp.new(car))
     end
   end
+
   def check_ret_after(lvl, cad, car)
     cad.reset
     cad.scan_until(Regexp.new(car))
@@ -94,6 +100,7 @@ module Test
       end
     end
   end
+
   def log_error(cases, lvl, car = nil, position = nil, lic = nil)
     line_with_test = "problem: line #{lvl}"
     line_with_test += ", column: #{position}" unless position.nil?
