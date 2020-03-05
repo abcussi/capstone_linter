@@ -73,7 +73,27 @@ module Cops
       cad.scan_until(Regexp.new(car))
     end
   end
-  
+
+  def check_lines_bet_blocks(cont, car)
+    res = false
+    inc = 0
+    0.upto(cont.length - 1) do |a|
+      cont[a].reset
+      if res && cont[a].string == ''
+        inc += 1
+        log_error(5, a + 1, car) if inc > 1
+      elsif res && cont[a].string != ''
+        log_error(5, a + 1, car) if inc.zero? && !cont[a].exist?(/}/)
+        res = false
+      else
+        res = false
+      end
+      if cont[a].exist?(/}/)
+        res = true
+        inc = 0
+      end
+    end
+  end
   def log_error
     p "error"
   end
