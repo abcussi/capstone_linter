@@ -1,11 +1,12 @@
 require_relative '../lib/tests.rb'
-require_relative '../lib/Reader.rb'
-include Test
+require_relative '../lib/reader.rb'
 
 describe Test do
+  include Test
+
   let(:key_o) { '{' }
   let(:key_c) { '}' }
-  
+
   describe '#check_indent_level' do
     it 'return array with the expected level of indentation' do
       file_path = 'spec/spec/indent_test.css'

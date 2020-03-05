@@ -1,5 +1,5 @@
 require 'strscan'
-
+# rubocop: disable Metrics/CyclomaticComplexity:
 module Test
   def indent_cop(cont, key_o, key_c)
     lev = check_indent_level(cont, key_o, key_c)
@@ -80,6 +80,7 @@ module Test
     end
   end
 
+  # rubocop: disable Metrics/PerceivedComplexity:
   def check_lines_bet_blocks(cont, car)
     res = false
     inc = 0
@@ -101,6 +102,7 @@ module Test
     end
   end
 
+  # rubocop: enable Metrics/PerceivedComplexity:
   def log_error(cases, lvl, car = nil, position = nil, lic = nil)
     line_with_test = "problem: line #{lvl}"
     line_with_test += ", column: #{position}" unless position.nil?
@@ -121,3 +123,5 @@ module Test
     cases
   end
 end
+
+# rubocop: enable Metrics/CyclomaticComplexity:

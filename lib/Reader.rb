@@ -6,12 +6,14 @@ class Reader
     self.line_read = cont.length
   end
 
-    private
+  private
 
+  # rubocop: disable Lint/UselessAssignment
   def get_file_content(direction)
     cont = ''
     File.open(direction, 'r') { |f| cont = f.readlines.map(&:chomp) }
     contcan = cont.map { |v| v = StringScanner.new(v) }
     contcan
   end
-  end
+  # rubocop: enable Lint/UselessAssignment
+end

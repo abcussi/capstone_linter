@@ -1,8 +1,8 @@
 require_relative '../lib/tests.rb'
-require_relative '../lib/Reader.rb'
-
+require_relative '../lib/reader.rb'
+# rubocop: disable Style/MixinUsage:
 include Test
-
+# rubocop: enable Style/MixinUsage:
 file_path = ARGV.shift
 key_o = '{'
 key_c = '}'
