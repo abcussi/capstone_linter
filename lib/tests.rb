@@ -56,4 +56,16 @@ module Cops
       res= cad.scan_until(Regexp.new(car))
     end
   end
+  def spc_check_after(lvl, cad, car)
+    cad.reset
+    cad.scan_until(Regexp.new(car))
+    while cad.matched?
+      cad.scan(/\s+/)
+      log_error(2, lvl, car, cad.pos) if cad.matched != ' '
+      cad.scan_until(Regexp.new(car))
+    end
+  end
+  def log_error
+    p "error"
+  end
 end
