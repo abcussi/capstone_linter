@@ -15,4 +15,10 @@ describe Test do
     end
   end
 
+  describe '#log_error' do
+  it 'return an error with the parameters' do
+    expect do
+      log_error(1, 10, nil, nil, 2)
+    end.to output("problem: line 10 Indentation problem expected 2 white spaces \n").to_stdout
+  end
 end
