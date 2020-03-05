@@ -14,6 +14,14 @@ module Cops
       log_error(1, a + 1, nil, nil, lev[a] * 2) unless sp == lev[a] * 2
     end
   end
+  def line_format_cop(cont)
+    cont.each_with_index do |x, a|
+      check_ret_after(a + 1, x, '{')
+      check_ret_after(a + 1, x, ';')
+      check_ret_after(a + 1, x, '}')
+    end
+    check_lines_bet_blocks(cont, '}')
+  end
   def spacing_cop(cont)
     cont.each_with_index do |x, a|
       spc_check_before(a + 1, x, '{')
