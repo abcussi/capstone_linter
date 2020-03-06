@@ -16,7 +16,7 @@ or
 (home/html_project/assets/styles.css)
 3) and then execute the file like this.
 
-"../bin/main.rb (copy the css path here)" it looks like this
+"ruby ../bin/main.rb (copy the css path here)" it looks like this 
 
 ![run](./run.png)
 
