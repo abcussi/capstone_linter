@@ -58,8 +58,8 @@ describe Test do
       expect do
         file_path = 'spec\spec\line_form_test.css'
         a = Reader.new(file_path)
-        check_ret_after(2, a.cont[1], ';')
-      end.to output("problem: line 2, column: 17 Format problem Expected line break after ;\n").to_stdout
+        check_ret_after(3, a.cont[2], ';')
+      end.to output("problem: line 3, column: 13 Format problem Expected line break after ;\n").to_stdout
     end
   end
 
