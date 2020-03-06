@@ -1,5 +1,6 @@
 class Reader
-  attr_accessor :direction, :line_read, :cont
+  attr_writer :line_read, :direction
+  attr_accessor :cont
   def initialize(direction)
     self.direction = direction
     self.cont = get_file_content(direction)
