@@ -28,7 +28,7 @@ main {
 .logo img {
   width: 177px;
   border-radius: 5%;
-  filter: invert(100%);
+  filter: invert (100%) ;
 }
 
 .logo img:hover {

@@ -1,3 +1,4 @@
+'#!/usr/bin/env ruby'
 require_relative '../lib/tests.rb'
 require_relative '../lib/reader.rb'
 # rubocop: disable Style/MixinUsage:

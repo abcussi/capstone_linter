@@ -42,8 +42,6 @@ module Test
   def spacing_cop(cont)
     cont.each_with_index do |x, a|
       spc_check_before(a + 1, x, '{')
-      spc_check_after(a + 1, x, '\)')
-      spc_check_before(a + 1, x, '\(')
       spc_check_after(a + 1, x, ':')
       spc_check_after(a + 1, x, ',')
     end
@@ -110,9 +108,9 @@ module Test
     when 1
       puts "#{line_with_test} Indentation problem expected #{lic} white spaces"
     when 2
-      puts "#{line_with_test} Spacing problem expected one space after #{car}"
+      puts "#{line_with_test} Spacing problem not expected one space after #{car}"
     when 3
-      puts "#{line_with_test} Spacing problem expected one space before #{car}"
+      puts "#{line_with_test} Spacing problem not expected one space before #{car}"
     when 4
       puts "#{line_with_test} Format problem Expected line break after #{car}"
     when 5
