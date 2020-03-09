@@ -108,9 +108,9 @@ module Test
     when 1
       puts "#{line_with_test} Indentation problem expected #{lic} white spaces"
     when 2
-      puts "#{line_with_test} Spacing problem not expected one space after #{car}"
+      puts "#{line_with_test} Spacing problem expected one space after #{car}"
     when 3
-      puts "#{line_with_test} Spacing problem not expected one space before #{car}"
+      puts "#{line_with_test} Spacing problem expected one space before #{car}"
     when 4
       puts "#{line_with_test} Format problem Expected line break after #{car}"
     when 5

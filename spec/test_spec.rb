@@ -9,7 +9,7 @@ describe Test do
 
   describe '#check_indent_level' do
     it 'return array with the expected level of indentation' do
-      file_path = 'spec/spec/indent_test.css'
+      file_path = 'spec\spec\indent_test.css'
       a = Reader.new(file_path)
       expect(check_indent_level(a.cont, key_o, key_c)).to eql([0, 1, 0])
     end
